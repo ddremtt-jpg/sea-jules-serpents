@@ -1,0 +1,440 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Sea Jules Serpents — high-quality locality boas, morph boas, and select carpet python projects. Call for current inventory and upcoming pairings." />
+  <title>Sea Jules Serpents</title>
+<style>
+    :root {
+      --bg: #030607;
+      --panel: #081014;
+      --panel-2: #0c171c;
+      --text: #f1eadf;
+      --muted: #b7c2c5;
+      --teal: #35c9d0;
+      --teal-soft: #73e1e5;
+      --gold: #d9c08c;
+      --line: rgba(115,225,229,.20);
+      --shadow: 0 24px 60px rgba(0,0,0,.45);
+    }
+
+    * { box-sizing: border-box; }
+    html { scroll-behavior: smooth; }
+    body {
+      margin: 0;
+      background:
+        radial-gradient(circle at top, rgba(20,85,96,.16), transparent 32rem),
+        linear-gradient(180deg, #020405 0%, #05090b 55%, #020405 100%);
+      color: var(--text);
+      font-family: 'Montserrat', Arial, sans-serif;
+      line-height: 1.65;
+    }
+
+    a { color: inherit; }
+
+    .nav {
+      position: sticky;
+      top: 0;
+      z-index: 10;
+      backdrop-filter: blur(14px);
+      background: rgba(2,5,6,.86);
+      border-bottom: 1px solid var(--line);
+    }
+    .nav-inner {
+      max-width: 1180px;
+      margin: auto;
+      padding: 14px 22px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+    }
+    .brand {
+      font-family: 'Cinzel', serif;
+      letter-spacing: .12em;
+      font-size: 1rem;
+      white-space: nowrap;
+    }
+    .nav-links {
+      display: flex;
+      gap: 18px;
+      align-items: center;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+    }
+    .nav-links a {
+      text-decoration: none;
+      color: var(--muted);
+      font-size: .88rem;
+    }
+    .nav-links a:hover { color: var(--teal-soft); }
+
+    .hero {
+      min-height: 78vh;
+      display: grid;
+      place-items: center;
+      padding: 72px 22px 58px;
+    }
+    .hero-wrap {
+      max-width: 1120px;
+      width: 100%;
+      display: grid;
+      grid-template-columns: 1.02fr .98fr;
+      gap: 60px;
+      align-items: center;
+    }
+    .logo-shell {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+    .logo {
+      width: min(100%, 630px);
+      border-radius: 22px;
+      box-shadow: var(--shadow);
+      display: block;
+    }
+    .eyebrow {
+      text-transform: uppercase;
+      letter-spacing: .22em;
+      color: var(--teal-soft);
+      font-weight: 600;
+      font-size: .78rem;
+      margin-bottom: 12px;
+    }
+    h1, h2, h3 {
+      font-family: 'Cinzel', serif;
+      margin-top: 0;
+      line-height: 1.15;
+    }
+    h1 {
+      font-size: clamp(2.8rem, 6vw, 5.3rem);
+      margin-bottom: 18px;
+      letter-spacing: .025em;
+    }
+    .hero p {
+      color: var(--muted);
+      font-size: 1.08rem;
+      max-width: 650px;
+      margin-bottom: 28px;
+    }
+    .actions {
+      display: flex;
+      gap: 12px;
+      flex-wrap: wrap;
+    }
+    .btn {
+      display: inline-block;
+      padding: 13px 20px;
+      border-radius: 999px;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: .92rem;
+      border: 1px solid var(--teal);
+      transition: .2s ease;
+    }
+    .btn-primary {
+      background: linear-gradient(135deg, #1ea9b1, #55dbe0);
+      color: #041012;
+    }
+    .btn-secondary {
+      color: var(--teal-soft);
+      background: rgba(53,201,208,.06);
+    }
+    .btn:hover { transform: translateY(-1px); }
+
+    section {
+      padding: 82px 22px;
+      border-top: 1px solid rgba(255,255,255,.035);
+    }
+    .container {
+      max-width: 1120px;
+      margin: auto;
+    }
+    .section-head {
+      max-width: 760px;
+      margin-bottom: 34px;
+    }
+    .section-head h2 {
+      font-size: clamp(2rem, 4vw, 3.2rem);
+      margin-bottom: 12px;
+    }
+    .section-head p { color: var(--muted); margin: 0; }
+
+    .projects {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 16px;
+    }
+    .card {
+      background: linear-gradient(180deg, rgba(12,23,28,.96), rgba(6,12,15,.96));
+      border: 1px solid var(--line);
+      padding: 24px;
+      border-radius: 18px;
+      min-height: 140px;
+      box-shadow: 0 12px 32px rgba(0,0,0,.2);
+    }
+    .card h3 {
+      font-size: 1.08rem;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+    .card p { margin: 0; color: var(--muted); font-size: .92rem; }
+
+
+    .gallery {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      grid-auto-rows: 180px;
+      gap: 14px;
+    }
+    .gallery img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      border-radius: 18px;
+      border: 1px solid var(--line);
+      box-shadow: 0 14px 34px rgba(0,0,0,.28);
+    }
+    .gallery img:nth-child(1) { grid-column: span 7; grid-row: span 2; }
+    .gallery img:nth-child(2) { grid-column: span 5; grid-row: span 2; }
+    .gallery img:nth-child(3) { grid-column: span 4; grid-row: span 2; }
+    .gallery img:nth-child(4) { grid-column: span 4; grid-row: span 2; }
+    .gallery img:nth-child(5) { grid-column: span 4; grid-row: span 2; }
+    .gallery img:nth-child(6) { grid-column: span 6; grid-row: span 2; }
+    .gallery img:nth-child(7) { grid-column: span 6; grid-row: span 2; }
+
+    .feature-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    .feature {
+      background: rgba(255,255,255,.025);
+      border-left: 3px solid var(--teal);
+      padding: 24px 26px;
+      border-radius: 0 14px 14px 0;
+    }
+    .feature strong {
+      display: block;
+      font-family: 'Cinzel', serif;
+      color: var(--gold);
+      font-size: 1.1rem;
+      margin-bottom: 7px;
+    }
+    .feature span { color: var(--muted); }
+
+    .callout {
+      text-align: center;
+      background: linear-gradient(135deg, rgba(24,104,114,.24), rgba(217,192,140,.07));
+      border: 1px solid rgba(115,225,229,.24);
+      border-radius: 22px;
+      padding: 42px 28px;
+      box-shadow: var(--shadow);
+    }
+    .callout h2 { font-size: clamp(2rem, 4vw, 3rem); margin-bottom: 14px; }
+    .callout p { color: var(--muted); max-width: 720px; margin: 0 auto 22px; }
+    .contact-line {
+      display: flex;
+      justify-content: center;
+      gap: 24px;
+      flex-wrap: wrap;
+      margin-top: 18px;
+      color: var(--text);
+      font-weight: 600;
+    }
+
+    footer {
+      padding: 34px 22px 44px;
+      text-align: center;
+      color: #829095;
+      font-size: .84rem;
+    }
+
+    @media (max-width: 860px) {
+      .hero-wrap, .feature-grid { grid-template-columns: 1fr; }
+      .hero-copy { text-align: center; }
+      .hero p { margin-left: auto; margin-right: auto; }
+      .actions { justify-content: center; }
+      .projects { grid-template-columns: repeat(2, 1fr); }
+      .gallery { grid-template-columns: repeat(2, 1fr); grid-auto-rows: 260px; }
+      .gallery img, .gallery img:nth-child(n) { grid-column: span 1; grid-row: span 1; }
+      .nav-inner { flex-direction: column; }
+      .nav-links { justify-content: center; }
+    }
+
+    @media (max-width: 560px) {
+      .projects { grid-template-columns: 1fr; }
+      .gallery { grid-template-columns: 1fr; grid-auto-rows: 320px; }
+      .hero { padding-top: 42px; }
+      .nav-links { gap: 11px; }
+      .nav-links a { font-size: .79rem; }
+      section { padding: 64px 18px; }
+    }
+  </style>
+</head>
+<body>
+  <header class="nav">
+    <div class="nav-inner">
+      <div class="brand">SEA JULES SERPENTS</div>
+      <nav class="nav-links" aria-label="Primary navigation">
+        <a href="#about">About</a>
+        <a href="#projects">Projects</a>
+        <a href="#gallery">Gallery</a>
+        <a href="#standards">Our Standards</a>
+        <a href="#availability">Availability</a>
+        <a href="#contact">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero" id="top">
+      <div class="hero-wrap">
+        <div class="logo-shell">
+          <img class="logo" src="logo.jpg" alt="Sea Jules Serpents logo" />
+        </div>
+        <div class="hero-copy">
+          <div class="eyebrow">Quality • Provenance • Select Breeding</div>
+          <h1>Sea Jules Serpents</h1>
+          <p>
+            Dedicated to producing high-quality locality boas, select morph boas, and exceptional carpet pythons. Our focus is on carefully chosen animals, responsible pairings, and maintaining reliable provenance for the animals we offer.
+          </p>
+          <div class="actions">
+            <a class="btn btn-primary" href="tel:+17724539914">Call for Inventory</a>
+            <a class="btn btn-secondary" href="mailto:SeaJulesllc@gmail.com">Email Sea Jules</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="about">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">About Sea Jules Serpents</div>
+          <h2>Quality-Focused. Carefully Selected.</h2>
+          <p>Sea Jules Serpents is a small, quality-focused breeder specializing in exceptional locality boas, select morph boas, and carpet pythons. Our collection has been carefully assembled with an emphasis on quality, provenance, and established bloodlines.</p>
+          <p>We believe documentation matters. Lineage and provenance information is available to serious buyers upon request and applicable documentation is included with each purchase.</p>
+          <p><strong>Dan &amp; Julie Reszka</strong><br>Sea Jules Serpents · Sebastian, Florida</p>
+        </div>
+      </div>
+    </section>
+
+    <section id="projects">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Current & Developing Projects</div>
+          <h2>Our Collection</h2>
+          <p>We maintain a focused collection of high-quality boas and carpet pythons selected for quality, locality, bloodline, and future breeding potential.</p>
+        </div>
+
+        <div class="projects">
+          <article class="card"><h3>Liberia Costa Rican Boas</h3><p>High-quality locality animals selected for future preservation-focused pairings.</p></article>
+          <article class="card"><h3>Pearl Island Boas</h3><p>Distinct island locality animals maintained as a dedicated project.</p></article>
+          <article class="card"><h3>Palmerston Carpet Pythons</h3><p>Nick Mutton line Palmerston carpets with an emphasis on quality and lineage integrity.</p></article>
+          <article class="card"><h3>Jungle Carpet Pythons</h3><p>High-quality Jungle Carpets selected for appearance, structure, and breeding potential.</p></article>
+          <article class="card"><h3>Kahl Line Morph Boas</h3><p>Selective morph projects built around established Kahl-line genetics.</p></article>
+          <article class="card"><h3>Sharp Line Morphs</h3><p>High-quality Sharp-line morph projects selected for standout combinations.</p></article>
+          <article class="card"><h3>Barranquilla Boas</h3><p>Rio Bravo line Barranquilla locality boas maintained as a premium locality project.</p></article>
+          <article class="card"><h3>Hog Island Boas</h3><p>Classic island boas selected for quality, consistency, and locality representation.</p></article>
+          <article class="card"><h3>Leopard Boas</h3><p>Selective Leopard boa projects with an emphasis on quality expression.</p></article>
+          <article class="card"><h3>Nicaraguan Boas</h3><p>Compact Central American boas maintained for high-quality future pairings.</p></article>
+          <article class="card"><h3>Brazilian Rainbow Boas</h3><p>High-quality Brazilian Rainbow Boas selected for exceptional color, iridescence, and overall quality.</p></article>
+          <article class="card"><h3>Argentine Boas</h3><p>High Pink and Max Pink Argentine boa projects selected for exceptional coloration.</p></article>
+          <article class="card"><h3>Suriname & Guyana Red Tails</h3><p>True red-tail projects selected for quality, structure, coloration, and locality character.</p></article>
+          <article class="card"><h3>Dumeril’s Boas</h3><p>High-quality Dumeril’s boas selected for exceptional overall quality and future breeding potential.</p></article>
+          <article class="card"><h3>More Projects Coming</h3><p>Additional Sea Jules Serpents projects will be announced as they develop.</p></article>
+        </div>
+      </div>
+    </section>
+
+
+    <section id="gallery">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">Sea Jules Animals</div>
+          <h2>From Our Collection</h2>
+          <p>A first look at animals from the Sea Jules collection. Additional photography will be added as our projects develop.</p>
+        </div>
+        <div class="gallery">
+          <img src="photo-1.jpg" alt="Boa from the Sea Jules Serpents collection" loading="lazy">
+          <img src="photo-2.jpg" alt="Carpet python from the Sea Jules Serpents collection" loading="lazy">
+          <img src="photo-3.jpg" alt="Black and yellow carpet python in a naturalistic enclosure" loading="lazy">
+          <img src="photo-4.jpg" alt="Boa displayed on climbing wood" loading="lazy">
+          <img src="photo-5.jpg" alt="Young boa from the Sea Jules Serpents collection" loading="lazy">
+          <img src="photo-6.jpg" alt="Black and yellow carpet python" loading="lazy">
+          <img src="photo-7.jpg" alt="Close view of a black and yellow carpet python from the Sea Jules Serpents collection" loading="lazy">
+        </div>
+      </div>
+    </section>
+
+    <section id="standards">
+      <div class="container">
+        <div class="section-head">
+          <div class="eyebrow">The Sea Jules Standard</div>
+          <h2>Quality Comes First</h2>
+          <p>We believe exceptional animals begin with careful selection and responsible breeding. Our goal is not to produce the most animals — it is to produce animals we are proud to put the Sea Jules name behind.</p>
+        </div>
+
+        <div class="feature-grid">
+          <div class="feature">
+            <strong>High-Quality Animals</strong>
+            <span>Our breeding stock is selected with an emphasis on health, appearance, structure, temperament, and long-term project value.</span>
+          </div>
+          <div class="feature">
+            <strong>Documented Provenance</strong>
+            <span>Lineage and provenance information is maintained privately, available to serious buyers upon request, and applicable documentation is included with each purchase.</span>
+          </div>
+          <div class="feature">
+            <strong>Selective Pairings</strong>
+            <span>Pairings are chosen deliberately to preserve important qualities and advance each project responsibly.</span>
+          </div>
+          <div class="feature">
+            <strong>Direct Communication</strong>
+            <span>We prefer speaking directly with prospective buyers so we can discuss current animals, upcoming pairings, and the right fit for each keeper or breeder.</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="availability">
+      <div class="container">
+        <div class="callout">
+          <div class="eyebrow">Availability</div>
+          <h2>Call for Current Inventory & Upcoming Pairings</h2>
+          <p>
+            We do not maintain a public inventory list on this website. Availability changes throughout the year, and some projects may have limited releases. Contact Sea Jules Serpents directly for current availability, upcoming pairings, and lineage information.
+          </p>
+          <div class="actions" style="justify-content:center;">
+            <a class="btn btn-primary" href="tel:+17724539914">Call 772-453-9914</a>
+            <a class="btn btn-secondary" href="mailto:SeaJulesllc@gmail.com">SeaJulesllc@gmail.com</a>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section id="contact">
+      <div class="container">
+        <div class="section-head" style="margin-left:auto;margin-right:auto;text-align:center;">
+          <div class="eyebrow">Contact Sea Jules</div>
+          <h2>Talk With Us About Your Next Animal</h2>
+          <p>For current availability, upcoming pairings, lineage documentation, or general inquiries, contact Sea Jules Serpents directly.</p><p><strong>Dan &amp; Julie Reszka</strong><br>Sebastian, Florida</p>
+        </div>
+        <div class="contact-line">
+          <a href="tel:+17724539914">772-453-9914</a>
+          <a href="mailto:SeaJulesllc@gmail.com">SeaJulesllc@gmail.com</a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    © <span id="year"></span> Sea Jules Serpents · Dan &amp; Julie Reszka · Sebastian, Florida. All rights reserved.
+  </footer>
+
+  <script>
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+</body>
+</html>
